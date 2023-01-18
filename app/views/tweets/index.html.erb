@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+<section class="section">
+<div class="container">
+<div class="columns">
+<% if user_signed_in? %>
+<%= render 'profile'%>
+<% else %>
+<%= render 'trend'%>
+<% end %>
+<%= render 'feed'%>
+<%= render 'wtfollow'%>
+</div>
+</div>
+</section>
