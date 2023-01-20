@@ -1,0 +1,10 @@
+<h1>New Comment</h1>
+
+<%= form_for [@tweet, @comment] do |f| %>
+  <div class="form-group">
+    <%= f.label :text %>
+    <%= f.text_area :body, class: 'form-control' %>
+  </div>
+
+  <%= f.submit "Post comment", class: "btn btn-primary" %>
+<% end %>

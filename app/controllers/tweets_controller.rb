@@ -18,7 +18,11 @@ class TweetsController < ApplicationController
 
   # GET /tweets/1 or /tweets/1.json
   def show
+  @tweet = Tweet.find(params[:id])
+  @comments = @tweet.comments
+  raise @comments.inspect
   end
+
 
   # GET /tweets/new
   def new

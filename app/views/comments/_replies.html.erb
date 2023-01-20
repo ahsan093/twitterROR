@@ -1,0 +1,20 @@
+<% @tweet.comments.each do |comment| %>
+  <div class="box">
+    <article class="media">
+      <div class="media-left">
+        <figure class="image is-64x64">
+          <%= gravatar_image_tag(comment.user.email, size: 64, alt: comment.user.name) %>
+        </figure>
+      </div>
+      <div class="media-content">
+        <div class="content">
+          <strong><%= comment.user.name %></strong>
+          <br />
+          <small><%= comment.user.username %></small>
+          <br />
+          <p><%= comment.body %></p>
+        </div>
+      </div>
+    </article>
+  </div>
+<% end %>

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations' }
-  resources :tweets
+  resources :tweets do
+    resources :comments, only: [:new, :create]
+  end
   resources :likes, only: :create
   post '/retweet/:id', to: 'tweets#retweet', as: 'retweet'
   root "tweets#index"
