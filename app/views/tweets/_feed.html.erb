@@ -25,8 +25,9 @@
   				<small><%=tweet.user.username%></small><br/>
   				<p><%= tweet.tweet %></p>
   			</div>
-			<h1>Replies</h1>
-<% @comments.each do |comment| %>
+<% if @comments.present? %>
+  <h1>Replies</h1>
+<% tweet.comments.each do |comment| %>
   <div class="box">
     <article class="media">
       <div class="media-left">
@@ -36,7 +37,7 @@
       </div>
       <div class="media-content">
         <div class="content">
-          <strong><%= comment.user.name %></strong>
+          <strong><%= User.find(comment.user_id).name %></strong>
           <br />
           <small><%= comment.user.username %></small>
           <br />
@@ -45,6 +46,8 @@
       </div>
     </article>
   </div>
+<% end %>
+
 <% end %>
 
 			<% if user_signed_in?%>

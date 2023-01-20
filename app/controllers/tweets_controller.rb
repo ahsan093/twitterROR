@@ -5,6 +5,8 @@ class TweetsController < ApplicationController
   def index
     @tweets = Tweet.all.order("created_at DESC")
     @tweet = Tweet.new
+    @comments = @tweet.comments
+    @comments = Comment.all
   end
   def retweet
     @retweet = Retweet.new(user_id: current_user.id, tweet_id: params[:id])
@@ -18,10 +20,11 @@ class TweetsController < ApplicationController
 
   # GET /tweets/1 or /tweets/1.json
   def show
-  @tweet = Tweet.find(params[:id])
-  @comments = @tweet.comments
-  raise @comments.inspect
+    @tweet = Tweet.find(params[:id])
+    @comments = @tweet.comments
   end
+  
+  
 
 
   # GET /tweets/new
