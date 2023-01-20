@@ -9,7 +9,10 @@ class CommentsController < ApplicationController
     def comment_params
     params.require(:comment).permit(:body)
     end
-
+    def index
+        @comments = Comment.where(tweet_id: params[:tweet_id])
+    end
+      
     def set_tweet
         @tweet = Tweet.find(params[:tweet_id])
     end

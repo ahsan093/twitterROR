@@ -35651,3 +35651,167 @@ Processing by TweetsController#index as HTML
 Completed 200 OK in 93ms (Views: 86.6ms | ActiveRecord: 5.8ms | Allocations: 32213)
 
 
+Started GET "/tweets" for 127.0.0.1 at 2023-01-20 13:20:55 +0500
+Processing by TweetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweets/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/index.html.erb:5
+  [1m[36mTweet Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 10]]
+  ↳ app/views/tweets/_profile.html.erb:26
+  Rendered tweets/_profile.html.erb (Duration: 2.9ms | Allocations: 1087)
+  Rendered tweets/_form.html.erb (Duration: 40.8ms | Allocations: 3569)
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweets/_feed.html.erb:14
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  Rendered tweets/_feed.html.erb (Duration: 69.8ms | Allocations: 7332)
+  Rendered tweets/index.html.erb within layouts/application (Duration: 81.9ms | Allocations: 10068)
+  Rendered layout layouts/application.html.erb (Duration: 82.4ms | Allocations: 10145)
+Completed 500 Internal Server Error in 96ms (ActiveRecord: 3.8ms | Allocations: 11434)
+
+
+
+NoMethodError - undefined method `each' for nil:NilClass:
+  app/views/tweets/_feed.html.erb:29
+  app/views/tweets/_feed.html.erb:14
+  app/views/tweets/index.html.erb:10
+
+Started POST "/__better_errors/e54c2e37fdf0187c/variables" for 127.0.0.1 at 2023-01-20 13:20:55 +0500
+Started GET "/tweets" for 127.0.0.1 at 2023-01-20 13:23:04 +0500
+Processing by TweetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweets/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/index.html.erb:5
+  [1m[36mTweet Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 10]]
+  ↳ app/views/tweets/_profile.html.erb:26
+  Rendered tweets/_profile.html.erb (Duration: 4.4ms | Allocations: 1614)
+  Rendered tweets/_form.html.erb (Duration: 6.4ms | Allocations: 3267)
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweets/_feed.html.erb:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  Rendered tweets/_feed.html.erb (Duration: 14.5ms | Allocations: 7559)
+  Rendered tweets/index.html.erb within layouts/application (Duration: 32.9ms | Allocations: 13689)
+  Rendered layout layouts/application.html.erb (Duration: 33.2ms | Allocations: 13766)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 3.5ms | Allocations: 21639)
+
+
+
+NoMethodError - undefined method `each' for nil:NilClass:
+  app/views/tweets/_feed.html.erb:29
+  app/views/tweets/_feed.html.erb:14
+  app/views/tweets/index.html.erb:10
+
+Started POST "/__better_errors/269a06b3358c2d1c/variables" for 127.0.0.1 at 2023-01-20 13:23:04 +0500
+Started GET "/tweets" for 127.0.0.1 at 2023-01-20 13:23:05 +0500
+Processing by TweetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweets/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/index.html.erb:5
+  [1m[36mTweet Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 10]]
+  ↳ app/views/tweets/_profile.html.erb:26
+  Rendered tweets/_profile.html.erb (Duration: 3.4ms | Allocations: 797)
+  Rendered tweets/_form.html.erb (Duration: 6.6ms | Allocations: 3296)
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweets/_feed.html.erb:14
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  Rendered tweets/_feed.html.erb (Duration: 11.8ms | Allocations: 6119)
+  Rendered tweets/index.html.erb within layouts/application (Duration: 20.4ms | Allocations: 8088)
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | Allocations: 8160)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.2ms | Allocations: 8558)
+
+
+
+NoMethodError - undefined method `each' for nil:NilClass:
+  app/views/tweets/_feed.html.erb:29
+  app/views/tweets/_feed.html.erb:14
+  app/views/tweets/index.html.erb:10
+
+Started POST "/__better_errors/7d2c44487fc70870/variables" for 127.0.0.1 at 2023-01-20 13:23:05 +0500
+Started GET "/tweets" for 127.0.0.1 at 2023-01-20 13:23:05 +0500
+Processing by TweetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweets/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/index.html.erb:5
+  [1m[36mTweet Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 10]]
+  ↳ app/views/tweets/_profile.html.erb:26
+  Rendered tweets/_profile.html.erb (Duration: 3.7ms | Allocations: 797)
+  Rendered tweets/_form.html.erb (Duration: 6.5ms | Allocations: 3296)
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweets/_feed.html.erb:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  Rendered tweets/_feed.html.erb (Duration: 14.4ms | Allocations: 6119)
+  Rendered tweets/index.html.erb within layouts/application (Duration: 24.1ms | Allocations: 8088)
+  Rendered layout layouts/application.html.erb (Duration: 24.7ms | Allocations: 8160)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 1.2ms | Allocations: 8558)
+
+
+
+NoMethodError - undefined method `each' for nil:NilClass:
+  app/views/tweets/_feed.html.erb:29
+  app/views/tweets/_feed.html.erb:14
+  app/views/tweets/index.html.erb:10
+
+Started POST "/__better_errors/e065eacaf12d1569/variables" for 127.0.0.1 at 2023-01-20 13:23:05 +0500
+Started GET "/tweets" for 127.0.0.1 at 2023-01-20 13:23:05 +0500
+Processing by TweetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweets/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/index.html.erb:5
+  [1m[36mTweet Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 10]]
+  ↳ app/views/tweets/_profile.html.erb:26
+  Rendered tweets/_profile.html.erb (Duration: 4.1ms | Allocations: 797)
+  Rendered tweets/_form.html.erb (Duration: 7.0ms | Allocations: 3294)
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweets/_feed.html.erb:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  Rendered tweets/_feed.html.erb (Duration: 16.3ms | Allocations: 6117)
+  Rendered tweets/index.html.erb within layouts/application (Duration: 25.3ms | Allocations: 8086)
+  Rendered layout layouts/application.html.erb (Duration: 25.8ms | Allocations: 8158)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 1.3ms | Allocations: 8556)
+
+
+
+NoMethodError - undefined method `each' for nil:NilClass:
+  app/views/tweets/_feed.html.erb:29
+  app/views/tweets/_feed.html.erb:14
+  app/views/tweets/index.html.erb:10
+
+Started POST "/__better_errors/3051d20675330ce6/variables" for 127.0.0.1 at 2023-01-20 13:23:05 +0500
+Started GET "/tweets" for 127.0.0.1 at 2023-01-20 13:23:05 +0500
+Processing by TweetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweets/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/index.html.erb:5
+  [1m[36mTweet Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 10]]
+  ↳ app/views/tweets/_profile.html.erb:26
+  Rendered tweets/_profile.html.erb (Duration: 3.7ms | Allocations: 797)
+  Rendered tweets/_form.html.erb (Duration: 6.8ms | Allocations: 3294)
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweets/_feed.html.erb:14
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  Rendered tweets/_feed.html.erb (Duration: 11.8ms | Allocations: 6117)
+  Rendered tweets/index.html.erb within layouts/application (Duration: 18.5ms | Allocations: 8086)
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | Allocations: 8158)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.8ms | Allocations: 8556)
+
+
+
+NoMethodError - undefined method `each' for nil:NilClass:
+  app/views/tweets/_feed.html.erb:29
+  app/views/tweets/_feed.html.erb:14
+  app/views/tweets/index.html.erb:10
+
+Started POST "/__better_errors/dd94fc021e9c2876/variables" for 127.0.0.1 at 2023-01-20 13:23:06 +0500
+Started POST "/__better_errors/dd94fc021e9c2876/variables" for 127.0.0.1 at 2023-01-20 13:23:08 +0500
+Started POST "/__better_errors/dd94fc021e9c2876/variables" for 127.0.0.1 at 2023-01-20 13:23:10 +0500

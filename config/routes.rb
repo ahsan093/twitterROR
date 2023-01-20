@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :tweets do
     resources :comments, only: [:new, :create]
   end
+  get 'tweet/:tweet_id/comments', to: 'comments#index'
   resources :likes, only: :create
   post '/retweet/:id', to: 'tweets#retweet', as: 'retweet'
   root "tweets#index"
