@@ -28,3 +28,9 @@ color: white;
 .notification:not(:last-child){
     margin-bottom: 0;
 }
+
+.level-left {
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+}
