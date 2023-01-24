@@ -39837,3 +39837,580 @@ NoMethodError - undefined method `id' for nil:NilClass:
 Started POST "/__better_errors/0b3159441d5b8e3b/variables" for 127.0.0.1 at 2023-01-24 14:31:36 +0500
 Started POST "/__better_errors/0b3159441d5b8e3b/variables" for 127.0.0.1 at 2023-01-24 14:31:39 +0500
 Started POST "/__better_errors/0b3159441d5b8e3b/variables" for 127.0.0.1 at 2023-01-24 14:31:42 +0500
+Started GET "/" for 127.0.0.1 at 2023-01-24 14:39:43 +0500
+Processing by TweetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweets/index.html.erb within layouts/application
+  Rendered tweets/_trend.html.erb (Duration: 0.5ms | Allocations: 176)
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweets/_feed.html.erb:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 35]]
+  ↳ app/views/tweets/_feed.html.erb:28
+  [1m[36mLike Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."likeable_id" = ? AND "likes"."likeable_type" = ? AND "likes"."user_id" IS NULL LIMIT ?[0m  [["likeable_id", 35], ["likeable_type", "Tweet"], ["LIMIT", 1]]
+  ↳ app/models/concerns/likeable.rb:9:in `liked_by?'
+  [1m[36mLike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = ? AND "likes"."likeable_type" = ?[0m  [["likeable_id", 35], ["likeable_type", "Tweet"]]
+  ↳ app/views/likes/_likes.html.erb:10
+  Rendered likes/_likes.html.erb (Duration: 6.1ms | Allocations: 2042)
+  Rendered tweets/_feed.html.erb (Duration: 17.3ms | Allocations: 6923)
+  Rendered tweets/index.html.erb within layouts/application (Duration: 20.6ms | Allocations: 7930)
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | Allocations: 8007)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 1.7ms | Allocations: 9404)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass:
+  app/views/tweets/_feed.html.erb:61
+  app/views/tweets/_feed.html.erb:14
+  app/views/tweets/index.html.erb:10
+
+Started POST "/__better_errors/99865fb574d7ebc0/variables" for 127.0.0.1 at 2023-01-24 14:39:43 +0500
+Started GET "/" for 127.0.0.1 at 2023-01-24 14:40:18 +0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TweetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweets/index.html.erb within layouts/application
+  Rendered tweets/_trend.html.erb (Duration: 29.8ms | Allocations: 187)
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweets/_feed.html.erb:14
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 35]]
+  ↳ app/views/tweets/_feed.html.erb:28
+  [1m[36mLike Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."likeable_id" = ? AND "likes"."likeable_type" = ? AND "likes"."user_id" IS NULL LIMIT ?[0m  [["likeable_id", 35], ["likeable_type", "Tweet"], ["LIMIT", 1]]
+  ↳ app/models/concerns/likeable.rb:9:in `liked_by?'
+  [1m[36mLike Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = ? AND "likes"."likeable_type" = ?[0m  [["likeable_id", 35], ["likeable_type", "Tweet"]]
+  ↳ app/views/likes/_likes.html.erb:10
+  Rendered likes/_likes.html.erb (Duration: 16.8ms | Allocations: 7222)
+  Rendered tweets/_feed.html.erb (Duration: 61.7ms | Allocations: 36321)
+  Rendered tweets/index.html.erb within layouts/application (Duration: 103.9ms | Allocations: 37998)
+  Rendered layout layouts/application.html.erb (Duration: 104.2ms | Allocations: 38086)
+Completed 500 Internal Server Error in 151ms (ActiveRecord: 4.1ms | Allocations: 71439)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass:
+  app/views/tweets/_feed.html.erb:61
+  app/views/tweets/_feed.html.erb:14
+  app/views/tweets/index.html.erb:10
+
+Started GET "/" for 127.0.0.1 at 2023-01-24 14:40:19 +0500
+Processing by TweetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweets/index.html.erb within layouts/application
+  Rendered tweets/_trend.html.erb (Duration: 0.1ms | Allocations: 10)
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweets/_feed.html.erb:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 35]]
+  ↳ app/views/tweets/_feed.html.erb:28
+  [1m[36mLike Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."likeable_id" = ? AND "likes"."likeable_type" = ? AND "likes"."user_id" IS NULL LIMIT ?[0m  [["likeable_id", 35], ["likeable_type", "Tweet"], ["LIMIT", 1]]
+  ↳ app/models/concerns/likeable.rb:9:in `liked_by?'
+  [1m[36mLike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = ? AND "likes"."likeable_type" = ?[0m  [["likeable_id", 35], ["likeable_type", "Tweet"]]
+  ↳ app/views/likes/_likes.html.erb:10
+  Rendered likes/_likes.html.erb (Duration: 10.4ms | Allocations: 1781)
+  Rendered tweets/_feed.html.erb (Duration: 21.8ms | Allocations: 5650)
+  Rendered tweets/index.html.erb within layouts/application (Duration: 23.9ms | Allocations: 6095)
+  Rendered layout layouts/application.html.erb (Duration: 24.3ms | Allocations: 6168)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 1.5ms | Allocations: 6653)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass:
+  app/views/tweets/_feed.html.erb:61
+  app/views/tweets/_feed.html.erb:14
+  app/views/tweets/index.html.erb:10
+
+Started POST "/__better_errors/6f9c87f88eb9e5b6/variables" for 127.0.0.1 at 2023-01-24 14:40:19 +0500
+Started GET "/tweets" for 127.0.0.1 at 2023-01-24 14:40:27 +0500
+Processing by TweetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweets/index.html.erb within layouts/application
+  Rendered tweets/_trend.html.erb (Duration: 0.1ms | Allocations: 10)
+  [1m[36mTweet Load (0.6ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweets/_feed.html.erb:14
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 35]]
+  ↳ app/views/tweets/_feed.html.erb:28
+  [1m[36mLike Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."likeable_id" = ? AND "likes"."likeable_type" = ? AND "likes"."user_id" IS NULL LIMIT ?[0m  [["likeable_id", 35], ["likeable_type", "Tweet"], ["LIMIT", 1]]
+  ↳ app/models/concerns/likeable.rb:9:in `liked_by?'
+  [1m[36mLike Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = ? AND "likes"."likeable_type" = ?[0m  [["likeable_id", 35], ["likeable_type", "Tweet"]]
+  ↳ app/views/likes/_likes.html.erb:10
+  Rendered likes/_likes.html.erb (Duration: 8.6ms | Allocations: 1772)
+  Rendered tweets/_feed.html.erb (Duration: 25.8ms | Allocations: 5640)
+  Rendered tweets/index.html.erb within layouts/application (Duration: 27.8ms | Allocations: 6084)
+  Rendered layout layouts/application.html.erb (Duration: 28.2ms | Allocations: 6157)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 2.2ms | Allocations: 6610)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass:
+  app/views/tweets/_feed.html.erb:61
+  app/views/tweets/_feed.html.erb:14
+  app/views/tweets/index.html.erb:10
+
+Started POST "/__better_errors/532a8d45fef38bb6/variables" for 127.0.0.1 at 2023-01-24 14:40:27 +0500
+Started GET "/tweets" for 127.0.0.1 at 2023-01-24 14:41:06 +0500
+Processing by TweetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweets/index.html.erb within layouts/application
+  Rendered tweets/_trend.html.erb (Duration: 1.0ms | Allocations: 176)
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweets/_feed.html.erb:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/views/tweets/_feed.html.erb:28
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 35]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 34]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 33]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 32]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 31]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 30]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 29]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 28]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 27]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:35
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:40
+  Rendered tweets/_feed.html.erb (Duration: 74.5ms | Allocations: 32068)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/tweets/_wtfollow.html.erb:4
+  Rendered tweets/_wtfollow.html.erb (Duration: 5.5ms | Allocations: 1601)
+  Rendered tweets/index.html.erb within layouts/application (Duration: 87.6ms | Allocations: 34783)
+  Rendered layout layouts/application.html.erb (Duration: 395.4ms | Allocations: 115944)
+Completed 200 OK in 403ms (Views: 395.6ms | ActiveRecord: 3.7ms | Allocations: 117293)
+
+
+Started GET "/" for 127.0.0.1 at 2023-01-24 14:41:09 +0500
+Processing by TweetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweets/index.html.erb within layouts/application
+  Rendered tweets/_trend.html.erb (Duration: 0.1ms | Allocations: 9)
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweets/_feed.html.erb:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/views/tweets/_feed.html.erb:28
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 35]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 34]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 33]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 32]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 31]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 30]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 29]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 28]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 27]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:35
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:40
+  Rendered tweets/_feed.html.erb (Duration: 60.3ms | Allocations: 14314)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/tweets/_wtfollow.html.erb:4
+  Rendered tweets/_wtfollow.html.erb (Duration: 3.0ms | Allocations: 1247)
+  Rendered tweets/index.html.erb within layouts/application (Duration: 65.7ms | Allocations: 16034)
+  Rendered layout layouts/application.html.erb (Duration: 77.4ms | Allocations: 20904)
+Completed 200 OK in 80ms (Views: 74.9ms | ActiveRecord: 3.7ms | Allocations: 21364)
+
+
+Started GET "/" for 127.0.0.1 at 2023-01-24 14:41:11 +0500
+Processing by TweetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweets/index.html.erb within layouts/application
+  Rendered tweets/_trend.html.erb (Duration: 0.1ms | Allocations: 9)
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweets/_feed.html.erb:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/views/tweets/_feed.html.erb:28
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 35]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 34]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 33]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 32]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 31]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 30]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 29]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 28]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 27]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:35
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:40
+  Rendered tweets/_feed.html.erb (Duration: 53.3ms | Allocations: 14180)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/tweets/_wtfollow.html.erb:4
+  Rendered tweets/_wtfollow.html.erb (Duration: 4.1ms | Allocations: 1246)
+  Rendered tweets/index.html.erb within layouts/application (Duration: 59.3ms | Allocations: 15835)
+  Rendered layout layouts/application.html.erb (Duration: 71.0ms | Allocations: 20689)
+Completed 200 OK in 73ms (Views: 68.5ms | ActiveRecord: 3.4ms | Allocations: 21082)
+
+
+Started GET "/" for 127.0.0.1 at 2023-01-24 14:41:11 +0500
+Processing by TweetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweets/index.html.erb within layouts/application
+  Rendered tweets/_trend.html.erb (Duration: 0.1ms | Allocations: 9)
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweets/_feed.html.erb:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/views/tweets/_feed.html.erb:28
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 35]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 34]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 33]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mUser Load (7.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 32]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 31]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 30]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 29]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 28]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 27]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:35
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:40
+  Rendered tweets/_feed.html.erb (Duration: 184.2ms | Allocations: 14330)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/tweets/_wtfollow.html.erb:4
+  Rendered tweets/_wtfollow.html.erb (Duration: 4.3ms | Allocations: 1252)
+  Rendered tweets/index.html.erb within layouts/application (Duration: 191.3ms | Allocations: 16065)
+Started GET "/" for 127.0.0.1 at 2023-01-24 14:41:11 +0500
+  Rendered layout layouts/application.html.erb (Duration: 211.5ms | Allocations: 21505)
+Completed 200 OK in 214ms (Views: 201.2ms | ActiveRecord: 11.5ms | Allocations: 21899)
+
+
+Processing by TweetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweets/index.html.erb within layouts/application
+  Rendered tweets/_trend.html.erb (Duration: 0.1ms | Allocations: 9)
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweets/_feed.html.erb:14
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/views/tweets/_feed.html.erb:28
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 35]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 34]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 33]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 32]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 31]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 30]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 29]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 28]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 27]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:35
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:40
+  Rendered tweets/_feed.html.erb (Duration: 40.1ms | Allocations: 14189)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/tweets/_wtfollow.html.erb:4
+  Rendered tweets/_wtfollow.html.erb (Duration: 2.5ms | Allocations: 1246)
+  Rendered tweets/index.html.erb within layouts/application (Duration: 44.0ms | Allocations: 15848)
+  Rendered layout layouts/application.html.erb (Duration: 55.4ms | Allocations: 20712)
+Completed 200 OK in 57ms (Views: 54.2ms | ActiveRecord: 2.4ms | Allocations: 21115)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-01-24 14:41:17 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.9ms | Allocations: 993)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 103.0ms | Allocations: 25652)
+  Rendered layout layouts/application.html.erb (Duration: 118.3ms | Allocations: 30796)
+Completed 200 OK in 130ms (Views: 124.2ms | ActiveRecord: 0.0ms | Allocations: 32891)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-01-24 14:41:20 +0500
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ahsanhassan084@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "ahsanhassan084@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 454ms (ActiveRecord: 0.4ms | Allocations: 4771)
+
+
+Started GET "/" for 127.0.0.1 at 2023-01-24 14:41:20 +0500
+Processing by TweetsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering tweets/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/index.html.erb:5
+  [1m[36mTweet Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 10]]
+  ↳ app/views/tweets/_profile.html.erb:26
+  Rendered tweets/_profile.html.erb (Duration: 3.6ms | Allocations: 1949)
+  Rendered tweets/_form.html.erb (Duration: 8.3ms | Allocations: 4133)
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweets/_feed.html.erb:14
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/views/tweets/_feed.html.erb:28
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 35]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mLike Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."likeable_id" = ? AND "likes"."likeable_type" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["likeable_id", 35], ["likeable_type", "Tweet"], ["user_id", 10], ["LIMIT", 1]]
+  ↳ app/models/concerns/likeable.rb:9:in `liked_by?'
+  [1m[36mLike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = ? AND "likes"."likeable_type" = ?[0m  [["likeable_id", 35], ["likeable_type", "Tweet"]]
+  ↳ app/views/likes/_likes.html.erb:10
+  Rendered likes/_likes.html.erb (Duration: 5.2ms | Allocations: 1981)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 34]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mLike Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."likeable_id" = ? AND "likes"."likeable_type" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["likeable_id", 34], ["likeable_type", "Tweet"], ["user_id", 10], ["LIMIT", 1]]
+  ↳ app/models/concerns/likeable.rb:9:in `liked_by?'
+  [1m[36mLike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = ? AND "likes"."likeable_type" = ?[0m  [["likeable_id", 34], ["likeable_type", "Tweet"]]
+  ↳ app/views/likes/_likes.html.erb:10
+  Rendered likes/_likes.html.erb (Duration: 3.9ms | Allocations: 1648)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 33]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 32]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 31]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 30]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 29]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mLike Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."likeable_id" = ? AND "likes"."likeable_type" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["likeable_id", 29], ["likeable_type", "Tweet"], ["user_id", 10], ["LIMIT", 1]]
+  ↳ app/models/concerns/likeable.rb:9:in `liked_by?'
+  [1m[36mLike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = ? AND "likes"."likeable_type" = ?[0m  [["likeable_id", 29], ["likeable_type", "Tweet"]]
+  ↳ app/views/likes/_likes.html.erb:10
+  Rendered likes/_likes.html.erb (Duration: 4.5ms | Allocations: 1648)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 28]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mLike Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."likeable_id" = ? AND "likes"."likeable_type" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["likeable_id", 28], ["likeable_type", "Tweet"], ["user_id", 10], ["LIMIT", 1]]
+  ↳ app/models/concerns/likeable.rb:9:in `liked_by?'
+  [1m[36mLike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = ? AND "likes"."likeable_type" = ?[0m  [["likeable_id", 28], ["likeable_type", "Tweet"]]
+  ↳ app/views/likes/_likes.html.erb:10
+  Rendered likes/_likes.html.erb (Duration: 5.1ms | Allocations: 1648)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 27]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:35
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:40
+  [1m[36mLike Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."likeable_id" = ? AND "likes"."likeable_type" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["likeable_id", 27], ["likeable_type", "Tweet"], ["user_id", 10], ["LIMIT", 1]]
+  ↳ app/models/concerns/likeable.rb:9:in `liked_by?'
+  [1m[36mLike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = ? AND "likes"."likeable_type" = ?[0m  [["likeable_id", 27], ["likeable_type", "Tweet"]]
+  ↳ app/views/likes/_likes.html.erb:10
+  Rendered likes/_likes.html.erb (Duration: 4.1ms | Allocations: 1648)
+  Rendered tweets/_feed.html.erb (Duration: 79.1ms | Allocations: 28772)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/tweets/_wtfollow.html.erb:4
+  Rendered tweets/_wtfollow.html.erb (Duration: 1.9ms | Allocations: 1015)
+  Rendered tweets/index.html.erb within layouts/application (Duration: 87.9ms | Allocations: 33108)
+  Rendered layout layouts/application.html.erb (Duration: 98.5ms | Allocations: 38065)
+Completed 200 OK in 101ms (Views: 94.3ms | ActiveRecord: 5.3ms | Allocations: 38566)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2023-01-24 14:41:33 +0500
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 12ms (ActiveRecord: 0.2ms | Allocations: 3024)
+
+
+Started GET "/" for 127.0.0.1 at 2023-01-24 14:41:33 +0500
+Processing by TweetsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering tweets/index.html.erb within layouts/application
+  Rendered tweets/_trend.html.erb (Duration: 0.1ms | Allocations: 10)
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweets/_feed.html.erb:14
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/views/tweets/_feed.html.erb:28
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 35]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 34]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 33]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 32]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 31]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 30]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 29]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 28]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:19
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?[0m  [["tweet_id", 27]]
+  ↳ app/views/tweets/_feed.html.erb:30
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:35
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tweets/_feed.html.erb:40
+  Rendered tweets/_feed.html.erb (Duration: 45.6ms | Allocations: 14312)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/tweets/_wtfollow.html.erb:4
+  Rendered tweets/_wtfollow.html.erb (Duration: 3.7ms | Allocations: 1247)
+  Rendered tweets/index.html.erb within layouts/application (Duration: 51.1ms | Allocations: 16056)
+  Rendered layout layouts/application.html.erb (Duration: 62.7ms | Allocations: 21056)
+Completed 200 OK in 66ms (Views: 60.6ms | ActiveRecord: 3.2ms | Allocations: 21520)
+
+
