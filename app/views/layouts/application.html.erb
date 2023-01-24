@@ -39,6 +39,27 @@
           <div class="navbar-item">
 					<div class="field is-grouped">
 						<p class="control">
+            <button id="toggle-btn">Dark</button>
+            <script>
+            const toggleBtn = document.getElementById("toggle-btn");
+const body = document.querySelector("body");
+
+// Check if the user has previously turned on dark mode
+if (localStorage.getItem("darkMode") === "enabled") {
+  body.classList.add("dark-mode");
+  toggleBtn.checked = true;
+}
+
+toggleBtn.addEventListener("click", () => {
+  body.classList.toggle("dark-mode");
+  if (body.classList.contains("dark-mode")) {
+    localStorage.setItem("darkMode", "enabled");
+  } else {
+    localStorage.removeItem("darkMode");
+  }
+});
+
+            </script>
 							<%= link_to 'New Tweet', root_path, class: "button is-info is-inverted" %>
 						</p>
 						 <% if user_signed_in? %>

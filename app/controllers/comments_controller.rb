@@ -5,23 +5,22 @@ class CommentsController < ApplicationController
         @tweet = Tweet.find(params[:tweet_id])
         @comment = @tweet.comments.new
     end
-    private
-    def comment_params
-    params.require(:comment).permit(:body)
-    end
     def index
         @comments = Comment.where(tweet_id: params[:tweet_id])
+    end
+    def comment_params
+    params.require(:comment).permit(:body)
     end
       
     def set_tweet
         @tweet = Tweet.find(params[:tweet_id])
     end
     def create
-        @tweet = Tweet.find(params[:tweet_id])
         @comment = @tweet.comments.new(comment_params)
         @comment.user = current_user
+        @comment.user_id = current_user.id
         if @comment.save
-          redirect_to tweet_path(@tweet, comments: @tweet.comments)
+          redirect_to tweet_path(@tweet)
         else
           render :new
         end

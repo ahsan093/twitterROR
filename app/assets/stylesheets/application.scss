@@ -28,9 +28,14 @@ color: white;
 .notification:not(:last-child){
     margin-bottom: 0;
 }
-
 .level-left {
     width: 50%;
     display: flex;
     justify-content: space-evenly;
 }
+.dark-mode {
+    background-color: $dark;
+    // color: $light;
+    -webkit-text-fill-color: rgb(5, 5, 5) !important;
+  }
+  
