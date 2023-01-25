@@ -49,15 +49,18 @@
 <% end %>
 <% end %>
 
+		
 			<% if user_signed_in?%>
+			
   			<nav class="level">
   				<div class="level-left is-mobile">
+				<%= content_tag :div, class: "#{dom_id(tweet)}_likes" do %>
+                <%= render "likes/likes", likeable: tweet %>
+                <% end %>
 				<%= link_to content_tag(:span, "", class: "fa fa-comment"), new_tweet_comment_path(tweet.id), class: "btn btn-primary" %>
-									<%end%>
-<%= content_tag :div, class: "#{dom_id(tweet)}_likes" do %>
-                    <%= render "likes/likes", likeable: tweet %>
-                    <% end %>
-				<%if(tweet.user.id == current_user.id)%>
+				<%end%>
+                    
+				<%if((current_user) && (tweet.user.id == current_user.id))%>
   					<%= link_to tweet, class: "level-item" do %>
   					  <span class="icon"><i class="fa fa-link" aria-hidden="true"></i></span>
   					<% end %>

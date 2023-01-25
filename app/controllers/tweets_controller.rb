@@ -3,10 +3,9 @@ class TweetsController < ApplicationController
   before_action :authenticate_user!,except:[:index,:show]
   # GET /tweets or /tweets.json
   def index
-    @tweets = Tweet.all.order("created_at DESC")
+    @tweets = Tweet.includes(:user).order("created_at DESC")
     @tweet = Tweet.new
-    @comments = @tweet.comments
-    @comments = Comment.all
+    @comments = Comment.includes(:tweet)
   end
   def retweet
     @retweet = Retweet.new(user_id: current_user.id, tweet_id: params[:id])
@@ -21,7 +20,7 @@ class TweetsController < ApplicationController
   # GET /tweets/1 or /tweets/1.json
   def show
     @tweet = Tweet.find(params[:id])
-    @comments = @tweet.comments
+    @comments = Comment.includes(:tweet)
   end
   
   
